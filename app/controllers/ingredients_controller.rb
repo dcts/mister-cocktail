@@ -1,5 +1,9 @@
 class IngredientsController < ApplicationController
   def index
-    @ingredients = Ingredient.all
+    @ingredients = Ingredient.where(category: "alcohol")
+  end
+
+  def show
+    @ingredient = Ingredient.find(params[:id])
   end
 end
