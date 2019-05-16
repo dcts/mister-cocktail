@@ -6,6 +6,10 @@
     <br>
   <% end %>
   <p><strong>Instructions</strong>: <%= @cocktail.instructions %></p>
+  <%= link_to "edit", edit_cocktail_path(@cocktail) %>
+  <br>
+  <%#= link_to "delete", cocktail_path(@cocktail), method: :delete %>
+  <br>
   <%= link_to "back to main", cocktails_path %>
 </div>
 

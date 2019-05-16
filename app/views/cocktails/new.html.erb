@@ -2,13 +2,7 @@
 
   <h1>Create New Cocktail</h1>
 
-  <%= simple_form_for(@cocktail) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :category %>
-    <%= f.input :instructions %>
-    <%= f.input :image_url %>
-    <%= f.submit class: "btn btn-primary" %>
-  <% end %>
+  <%= render 'form', cocktail: @cocktail %>
 
   <%= link_to "back to main", cocktails_path %>
 
