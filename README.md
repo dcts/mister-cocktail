@@ -26,6 +26,11 @@ rails generate model dose description ingredient:references cocktail:references
 rails db:migrate
 
 # run seeds
+rails db:seed
+
+# generate controllers
+rails generate controller cocktails index show new create edit update destroy
+#
 
 
 ```
