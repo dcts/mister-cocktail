@@ -20,14 +20,10 @@ class DosesController < ApplicationController
   end
 
   def update
-    #find dose
-    @dose = Dose.find(params[:id])
-    # update description
-    @dose.description = params[:dose][:description]
-    # update ingredient
-    @dose.ingredient = Ingredient.find(params[:dose][:ingredient_id])
-    # save dose
-    if @dose.save
+    @dose = Dose.find(params[:id]) #find dose
+    @dose.description = params[:dose][:description] # update description
+    @dose.ingredient = Ingredient.find(params[:dose][:ingredient_id]) # update ingredient
+    if @dose.save ? # save dose
       redirect_to cocktail_path(@dose.cocktail)
     else
       render :edit
