@@ -29,7 +29,9 @@ rails db:migrate
 rails db:seed
 
 # generate controllers
-rails generate controller cocktails index show new create edit update destroy
+rails generate controller cocktails
+
+rails generate controller doses
 #
 
 
