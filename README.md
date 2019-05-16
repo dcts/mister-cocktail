@@ -13,5 +13,19 @@ Paste in [this File](db/db_schema.xml) [here](db.lewagon.com).
 # create this project
 rails new mister-cocktail -T --webpack --database=postgresql --skip-active-storage
 
+# create db
+rails db:create
+# create model for cocktail
+rails generate model cocktail name image_url instructions category
+rails db:migrate
+# create model for ingredient
+rails generate model ingredient name category
+rails db:migrate
+# create model for dose
+rails generate model dose description ingredient:references cocktail:references
+rails db:migrate
+
+# run seeds
+
 
 ```
