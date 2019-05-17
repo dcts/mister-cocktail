@@ -5,6 +5,8 @@
     <%= f.input :ingredient_id, collection: Ingredient.all %>
     <%= f.submit class: "btn btn-primary" %>
   <% end %>
+  <br>
+  <%= link_to ("<p class='btn btn-danger'>Back</p>").html_safe, cocktail_path(@cocktail) %>
 
 </div>
 

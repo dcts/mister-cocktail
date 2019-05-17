@@ -4,6 +4,6 @@
   <% @ingredient.cocktails.each do |cocktail| %>
     <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
   <% end %>
-
-  <%= link_to "back to ingredients", ingredients_path %>
+  <br>
+  <%= link_to ("<p class='btn btn-sm btn-dark'>Back</p>").html_safe, ingredients_path %>
 </div>
