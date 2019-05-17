@@ -6,5 +6,10 @@
   <%= link_to ("<p class='btn btn-dark'>Browse by Spiritus</p>").html_safe, ingredients_path %>
   <br>
   <a class="btn btn-info" href="/deadlink_test">DEAD LINK</a>
+  <br>
+  <br>
+  <%= link_to ("<p class='btn btn-danger'>DELETE WHOLE DATABASE (dont do it)</p>").html_safe, reset_tables_delete_path %>
+  <br>
+  <%= link_to ("<p class='btn btn-success'>RESET DATABASE</p>").html_safe, reset_tables_run_path %>
 
 </div>

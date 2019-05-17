@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   end
   resources :doses, only: [:edit, :update, :destroy]
   resources :ingredients, only: [:index, :show]
+
+  get 'reset_tables/run', to: "reset_tables#run"
+  get 'reset_tables/delete', to: "reset_tables#delete"
 end

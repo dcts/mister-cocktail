@@ -3,9 +3,9 @@
 
 # RESET
 puts "resetting data (deleting existent entries)"
+Dose.delete_all
 Cocktail.delete_all
 Ingredient.delete_all
-Dose.delete_all
 
 # CREATE INGREDIENTS
 # fruits
