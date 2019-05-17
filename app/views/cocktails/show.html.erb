@@ -1,17 +1,30 @@
 <div class="container">
   <h1>
     <%= @cocktail.name %>
-    <%= link_to "edit", edit_cocktail_path(@cocktail) %>
-    <%= link_to "delete", cocktail_path(@cocktail), method: :delete %>
+    <%= link_to ('<i class="fas fa-pencil-alt"></i>').html_safe, edit_cocktail_path(@cocktail) %>
+    <%= link_to ('<i class="fas fa-trash-alt"></i>').html_safe, cocktail_path(@cocktail), method: :delete %>
   </h1>
-  <% @cocktail.doses.each do |dose| %>
-    <%= dose.description %>
-    <%= dose.ingredient.name %>
-    <%= link_to "EDIT", edit_dose_path(dose)  %>
-    <%= link_to 'DEL', dose_path(dose), :confirm => 'Are you sure?', :method => :delete %>
-    <br>
-  <% end %>
+
+  <table>
+    <tr>
+      <th></th>
+      <th>Ingredient</th>
+      <th>admin</th>
+    </tr>
+    <% @cocktail.doses.each do |dose| %>
+      <tr>
+        <td style="width: 50px"><%= dose.description %></td>
+        <td style="width: 300px"><%= dose.ingredient.name %></td>
+        <td>
+          <%= link_to ('<i class="fas fa-pencil-alt"></i>').html_safe, edit_dose_path(dose)  %>
+          <%= link_to ('<i class="fas fa-trash-alt"></i>').html_safe, dose_path(dose), :confirm => 'Are you sure?', :method => :delete %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+  <br>
   <%= link_to ("<p class='btn btn-primary btn-sm'>add dose</p>").html_safe, new_cocktail_dose_path(@cocktail) %>
+  <br>
   <p><strong>Instructions</strong>: <%= @cocktail.instructions %></p>
 
   <%= link_to ("<p class='btn btn-dark'>Browse Cocktails</p>").html_safe, cocktails_path %>
